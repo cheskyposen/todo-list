@@ -1,0 +1,8 @@
+.div-flex {
+    display: flex;
+    clear: both;
+}
+mat-card {
+    flex: 50%;
+    margin: 2px;
+}
