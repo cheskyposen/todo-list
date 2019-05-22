@@ -12,7 +12,6 @@ import { EditTodoComponent } from '../edit-todo/edit-todo.component';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  typesOfShoes: string[] = ['Boots', 'Clogs', 'Loafers', 'Moccasins', 'Sneakers'];
   todos: Todo[];
   doneTodos: Todo[];
 
@@ -30,9 +29,9 @@ export class TodoListComponent implements OnInit {
     this.bottomSheet.open(AddTodoComponent);
   }
 
-  openBottomSheetEdit(i: number, todo: Todo): void {
+  openBottomSheetEdit(todo: Todo): void {
     this.bottomSheet.open(EditTodoComponent, {
-      data: { index: i, todo: todo },
+      data: todo,
     });
   }
 
@@ -42,5 +41,9 @@ export class TodoListComponent implements OnInit {
 
   delete(i: number): void {
     this.todoService.deleteTodo(i);
+  }
+
+  undo(i: number, todo: Todo): void {
+    this.todoService.setUndone(i, todo);
   }
 }

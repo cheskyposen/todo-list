@@ -1,29 +1,17 @@
-import { Component, OnInit, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Todo } from 'src/app/todo';
-import { TodoService } from 'src/app/todo.service';
 import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-edit-todo',
   templateUrl: './edit-todo.component.html'
 })
-export class EditTodoComponent implements OnInit {
+export class EditTodoComponent {
   todo: Todo;
-  index: number;
   constructor(
-    private bottomSheetRef: MatBottomSheetRef<EditTodoComponent>,
-    private todoService: TodoService,
-    @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
+    public bottomSheetRef: MatBottomSheetRef<EditTodoComponent>,
+    @Inject(MAT_BOTTOM_SHEET_DATA) public data: Todo
   ) {
-      this.index = data.index;
-      this.todo = data.todo;
+      this.todo = data;
    }
-
-  ngOnInit() {
-  }
-
-  editTodo() {
-    this.todoService.editTodo(this.index, this.todo);
-    this.bottomSheetRef.dismiss();
-  }
 }

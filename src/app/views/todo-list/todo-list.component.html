@@ -6,7 +6,7 @@
       <mat-list>
         <mat-list-item *ngFor="let todo of todos; let i = index">
           <button mat-icon-button>
-            <mat-icon mat-list-icon color="accent" (click)="openBottomSheetEdit(i, todo)">edit</mat-icon>
+            <mat-icon mat-list-icon color="accent" (click)="openBottomSheetEdit(todo)">edit</mat-icon>
           </button>
           <button mat-icon-button>
             <mat-icon mat-list-icon color="primary" (click)="markDone(i, todo)">done_outline</mat-icon>
@@ -20,6 +20,9 @@
     <mat-card-title>Done todos</mat-card-title>
     <mat-list>
         <mat-list-item *ngFor="let todo of doneTodos; let i = index">
+          <button mat-icon-button>
+            <mat-icon mat-list-icon (click)="undo(i, todo)">undo</mat-icon>
+          </button>
           <button mat-icon-button>
             <mat-icon mat-list-icon color="warn" (click)="delete(i)">delete_forever</mat-icon>
           </button>

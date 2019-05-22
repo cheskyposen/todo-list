@@ -1,4 +1,4 @@
-<form (ngSubmit)="editTodo()">
+<form>
     <h2>Edit to do</h2>
     <p>
       <mat-form-field appearance="outline">
@@ -14,5 +14,5 @@
           <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </p>
-    <button mat-flat-button color="accent" type="submit">Submit</button>
+    <button mat-flat-button color="accent" type="submit" (click)="bottomSheetRef.dismiss()">Done</button>
 </form>

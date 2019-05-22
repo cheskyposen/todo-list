@@ -32,7 +32,8 @@ export class TodoService {
     this.doneTodos.splice(i, 1);
   }
 
-  editTodo(i: number, todo: Todo): void {
-    this.todos.splice(i, 1, todo);
+  setUndone(i: number, todo: Todo): void {
+    this.doneTodos.splice(i, 1);
+    this.todos.push(todo);
   }
 }
