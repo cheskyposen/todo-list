@@ -5,8 +5,7 @@ import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material';
 
 @Component({
   selector: 'app-edit-todo',
-  templateUrl: './edit-todo.component.html',
-  styleUrls: ['./edit-todo.component.css']
+  templateUrl: './edit-todo.component.html'
 })
 export class EditTodoComponent implements OnInit {
   todo: Todo;

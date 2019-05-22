@@ -4,8 +4,7 @@ import { TodoService } from 'src/app/todo.service';
 
 @Component({
   selector: 'app-add-todo',
-  templateUrl: './add-todo.component.html',
-  styleUrls: ['./add-todo.component.css']
+  templateUrl: './add-todo.component.html'
 })
 export class AddTodoComponent implements OnInit {
   task: string;
