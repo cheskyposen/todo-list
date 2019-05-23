@@ -2,7 +2,7 @@
 
 <div class="div-flex">
   <mat-card>
-      <mat-card-title>Todo list</mat-card-title>
+      <mat-card-title>Tasks todo</mat-card-title>
       <mat-list>
         <mat-list-item *ngFor="let todo of todos; let i = index">
           <button mat-icon-button>
@@ -11,13 +11,13 @@
           <button mat-icon-button>
             <mat-icon mat-list-icon color="primary" (click)="markDone(i, todo)">done_outline</mat-icon>
           </button>
-          <h4 mat-line>{{todo.task | uppercase}}</h4>
-          <p mat-line> {{todo.dueDate | date}} </p>
+          <h4 mat-line>{{todo.task | titlecase}}</h4>
+          <p mat-line><em>{{todo.dueDate | date}} </em></p>
         </mat-list-item>
       </mat-list>
   </mat-card>
   <mat-card>
-    <mat-card-title>Done todos</mat-card-title>
+    <mat-card-title>Tasks done</mat-card-title>
     <mat-list>
         <mat-list-item *ngFor="let todo of doneTodos; let i = index">
           <button mat-icon-button>
@@ -26,7 +26,7 @@
           <button mat-icon-button>
             <mat-icon mat-list-icon color="warn" (click)="delete(i)">delete_forever</mat-icon>
           </button>
-          <h4 mat-line>{{todo.task | uppercase}}</h4>
+          <h4 mat-line><del>{{todo.task | titlecase}}</del></h4>
           <p mat-line> {{todo.dueDate | date}} </p>
         </mat-list-item>
       </mat-list>
