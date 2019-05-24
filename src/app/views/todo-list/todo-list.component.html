@@ -11,7 +11,7 @@
           <button mat-icon-button>
             <mat-icon mat-list-icon color="primary" (click)="markDone(i, task)">done_outline</mat-icon>
           </button>
-          <h4 mat-line>{{task.task | uppercase}}</h4>
+          <h4 mat-line>{{task.task | titlecase}}</h4>
           <p mat-line> {{task.dueDate | date}} </p>
         </mat-list-item>
       </mat-list>
@@ -26,7 +26,7 @@
           <button mat-icon-button>
             <mat-icon mat-list-icon color="warn" (click)="delete(i)">delete_forever</mat-icon>
           </button>
-          <h4 mat-line>{{task.task | uppercase}}</h4>
+          <h4 mat-line>{{task.task | titlecase}}</h4>
           <p mat-line> {{task.dueDate | date}} </p>
         </mat-list-item>
       </mat-list>
