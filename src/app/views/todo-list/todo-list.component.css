@@ -1,8 +1,19 @@
 .div-flex {
     display: flex;
+    flex-direction: column;
     clear: both;
 }
 mat-card {
+  margin: .5rem;
+  flex: 100%;
+}
+
+@media screen and (min-width: 760px) {
+  .div-flex {
+    flex-direction: row;
+  }
+  mat-card {
+    margin: 1rem;
     flex: 50%;
-    margin: 2px;
+  }
 }
