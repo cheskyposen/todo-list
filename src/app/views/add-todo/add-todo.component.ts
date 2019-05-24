@@ -18,7 +18,7 @@ export class AddTodoComponent implements OnInit {
   }
 
   addTodo() {
-    this.todoService.setTodo(this.task, this.due);
+    this.todoService.setTask(this.task, this.due);
     this.bottomSheetRef.dismiss();
   }
 }

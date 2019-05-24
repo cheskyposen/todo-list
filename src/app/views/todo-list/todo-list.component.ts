@@ -21,8 +21,8 @@ export class TodoListComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.todoService.getTodos().subscribe((res) => this.tasksTodo = res);
-    this.todoService.getDoneTodos().subscribe((res) => this.tasksDone = res);
+    this.todoService.getTasksTodo().subscribe((res) => this.tasksTodo = res);
+    this.todoService.getTasksDone().subscribe((res) => this.tasksDone = res);
   }
 
   openBottomSheetAdd(): void {
@@ -36,7 +36,7 @@ export class TodoListComponent implements OnInit {
   }
 
   markDone(i: number, todo: Todo): void {
-    this.todoService.setDone(i, todo);
+    this.todoService.setTaskDone(i, todo);
   }
 
   delete(i: number): void {
@@ -44,6 +44,6 @@ export class TodoListComponent implements OnInit {
   }
 
   undo(i: number, todo: Todo): void {
-    this.todoService.setUndone(i, todo);
+    this.todoService.setTaskUndone(i, todo);
   }
 }

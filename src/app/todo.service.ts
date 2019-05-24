@@ -6,34 +6,34 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class TodoService {
-  todos: Todo[] = [];
-  doneTodos: Todo[] = [];
+  tasksTodo: Todo[] = [];
+  tasksDone: Todo[] = [];
 
   constructor() { }
 
-  getTodos(): Observable<Todo[]> {
-    return of(this.todos);
+  getTasksTodo(): Observable<Todo[]> {
+    return of(this.tasksTodo);
   }
 
-  getDoneTodos(): Observable<Todo[]> {
-    return of(this.doneTodos);
+  getTasksDone(): Observable<Todo[]> {
+    return of(this.tasksDone);
   }
 
-  setTodo(task: string, dueDate: any): void {
-    this.todos.push(new Todo(task, dueDate));
+  setTask(task: string, dueDate: any): void {
+    this.tasksTodo.push(new Todo(task, dueDate));
   }
 
-  setDone(i: number, todo: Todo): void {
-    this.todos.splice(i, 1);
-    this.doneTodos.push(todo);
+  setTaskDone(i: number, todo: Todo): void {
+    this.tasksTodo.splice(i, 1);
+    this.tasksDone.push(todo);
   }
 
   deleteTodo(i: number): void {
-    this.doneTodos.splice(i, 1);
+    this.tasksDone.splice(i, 1);
   }
 
-  setUndone(i: number, todo: Todo): void {
-    this.doneTodos.splice(i, 1);
-    this.todos.push(todo);
+  setTaskUndone(i: number, todo: Todo): void {
+    this.tasksDone.splice(i, 1);
+    this.tasksTodo.push(todo);
   }
 }

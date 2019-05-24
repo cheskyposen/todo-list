@@ -1,18 +1,18 @@
 <form (ngSubmit)="addTodo()">
-    <h2>Add to do</h2>
+    <h2>Add Task Todo</h2>
     <p>
       <mat-form-field appearance="outline">
         <mat-label>Task todo</mat-label>
-        <input matInput placeholder="Task todo" [(ngModel)]="task" name="task">
+        <input matInput placeholder="Task todo" [(ngModel)]="task" name="task" required>
       </mat-form-field>
     </p>
     <p>
       <mat-form-field appearance="legacy">
         <mat-label>Due date</mat-label>
-        <input matInput [matDatepicker]="picker" placeholder="Due date" [(ngModel)]="due" name="due">
+        <input matInput [matDatepicker]="picker" placeholder="Due date" [(ngModel)]="due" name="due" required>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </p>
-    <button mat-flat-button color="accent" type="submit">Submit</button>
+    <button mat-flat-button color="warn" type="submit">Submit</button>
 </form>
