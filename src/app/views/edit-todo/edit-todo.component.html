@@ -3,13 +3,13 @@
     <p>
       <mat-form-field appearance="outline">
         <mat-label>Task todo</mat-label>
-        <input matInput placeholder="Task todo" [(ngModel)]="todo.task" name="task">
+        <input matInput placeholder="Task todo" [(ngModel)]="task.task" name="task">
       </mat-form-field>
     </p>
     <p>
       <mat-form-field appearance="legacy">
         <mat-label>Due date</mat-label>
-          <input matInput [matDatepicker]="picker" placeholder="Due date" [(ngModel)]="todo.dueDate" name="due">
+          <input matInput [matDatepicker]="picker" placeholder="Due date" [(ngModel)]="task.dueDate" name="due">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>

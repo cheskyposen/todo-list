@@ -7,11 +7,11 @@ import { MatBottomSheetRef, MAT_BOTTOM_SHEET_DATA } from '@angular/material';
   templateUrl: './edit-todo.component.html'
 })
 export class EditTodoComponent {
-  todo: Todo;
+  task: Todo;
   constructor(
     public bottomSheetRef: MatBottomSheetRef<EditTodoComponent>,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: Todo
   ) {
-      this.todo = data;
+      this.task = data;
    }
 }

@@ -12,8 +12,8 @@ import { EditTodoComponent } from '../edit-todo/edit-todo.component';
   styleUrls: ['./todo-list.component.css']
 })
 export class TodoListComponent implements OnInit {
-  todos: Todo[];
-  doneTodos: Todo[];
+  tasksTodo: Todo[];
+  tasksDone: Todo[];
 
   constructor(
     private bottomSheet: MatBottomSheet,
@@ -21,8 +21,8 @@ export class TodoListComponent implements OnInit {
     ) { }
 
   ngOnInit() {
-    this.todoService.getTodos().subscribe((res) => this.todos = res);
-    this.todoService.getDoneTodos().subscribe((res) => this.doneTodos = res);
+    this.todoService.getTodos().subscribe((res) => this.tasksTodo = res);
+    this.todoService.getDoneTodos().subscribe((res) => this.tasksDone = res);
   }
 
   openBottomSheetAdd(): void {
